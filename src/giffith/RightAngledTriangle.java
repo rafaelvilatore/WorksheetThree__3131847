@@ -27,10 +27,10 @@ public class RightAngledTriangle extends Shape {
  // Computes perimeter (base + height + hypotenuse)
  @Override
  public double perimeter() {
-     double hypotenuse = Math.sqrt(base * base + height * height);
+     double hypotenuse = Math.sqrt(Math.pow(base, 2) + Math.pow(height, 2));
      return base + height + hypotenuse;
  }
-
+ 
  // Returns triangle details
  @Override
  public String toString() {
