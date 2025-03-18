@@ -5,14 +5,19 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.ArrayList;
 
 class ShapeTest {
-    private static final double EPSILON = 0; // Precision for floating-point comparisons
-
+	private static final double EPSILON = 1e-6; // Small tolerance for floating-point errors
+	
+	// --- TEST CIRCLE CLASS ---
     @Test
     void testCircle() {
         Circle c = new Circle("Circle", 3.5);
-        assertEquals(38.4845, c.area(), EPSILON); // π * 3.5²
-        assertEquals(21.9911, c.perimeter(), EPSILON); // 2 * π * 3.5
-        assertEquals("Circle: radius = 3.5", c.toString());
+
+        double expectedArea = Math.PI * c.getRadius() * c.getRadius();
+        double expectedPerimeter = 2 * Math.PI * c.getRadius();
+
+        assertEquals(expectedArea, c.area(), EPSILON, "Circle area mismatch");
+        assertEquals(expectedPerimeter, c.perimeter(), EPSILON, "Circle perimeter mismatch");
+        assertEquals("Circle: radius = 3.5", c.toString(), "Circle toString mismatch");
     }
 
     @Test
