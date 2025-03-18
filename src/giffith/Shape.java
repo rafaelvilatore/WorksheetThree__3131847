@@ -1,22 +1,26 @@
 package giffith;
 
 
+//Abstract class defining a Shape
 public abstract class Shape {
-    private String name;
+ private String name; // Stores shape name
 
-    public Shape(String name) {
-        this.name = name;
-    }
+ // Constructor to initialize name
+ public Shape(String name) {
+     this.name = name;
+ }
 
-    public String getName() { return name; }
+ // Getter and setter for name
+ public String getName() { return name; }
+ public void setName(String name) { this.name = name; }
 
-    public void setName(String name) { this.name = name; }
+ // Abstract methods to be implemented by subclasses
+ public abstract double area();
+ public abstract double perimeter();
 
-    public abstract double area();
-    public abstract double perimeter();
-
-    @Override
-    public String toString() {
-        return name;
-    }
+ // Returns the shape's name
+ @Override
+ public String toString() {
+     return name;
+ }
 }
